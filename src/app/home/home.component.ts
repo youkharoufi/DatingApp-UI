@@ -11,23 +11,16 @@ export class HomeComponent implements OnInit {
   registerMode = false;
   users: any;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getUsers();
+    //this.getUsers();
   }
 
   registerToggle() {
     this.registerMode = !this.registerMode;
   }
 
-  getUsers() {
-    this.http.get('https://localhost:7195/api/users').subscribe({
-      next: response => { this.users = response; console.log(response) },
-      error: error => console.log(error),
-      complete: () => console.log('Request completed !')
-    })
-  }
 
   cancelRegisterMode(event: boolean) {
     this.registerMode = event;

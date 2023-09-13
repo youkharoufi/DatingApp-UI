@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/co
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable, of } from 'rxjs';
-import { User } from '../_model/User';
+import { User } from '../_model/user';
 import { AccountService } from '../_services/account.service';
 
 @Component({

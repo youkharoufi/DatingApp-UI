@@ -1,24 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
   <div class="container">
     <a class="navbar-brand" routerLink="/">Dating App</a>
 
     
     <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="currentUser$ | async">
-      <li class="nav-item">
-        <a class="nav-link active" routerLink="/members" routerLinkActive="active">Matches</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
-      </li>
+      <ng-container *ngIf="currentUser$ | async">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/members"
+             [routerLinkActiveOptions]="{exact:true}"
+             routerLinkActive="active">Matches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
+        </li>
+        <li class="nav-item" *appHasRole="['Admin', 'Moderator']">
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
+        </li>
+      </ng-container>
     </ul>
 
-    <div *ngIf="currentUser$ | async" class="dropdown" dropdown>
-      <a class="dropdown-toggle text-light text-decoration-none" dropdownToggle>Welcome user</a>
+    <div *ngIf="(currentUser$ | async) as user" class="dropdown" dropdown>
+      <img src="{{user.photoUrl || './assets/user.png'}}" alt="user photo" />
+      <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle>Welcome {{user.knownAs | titlecase}}</a>
       <div class="dropdown-menu mt-3" *dropdownMenu>
-        <a class="dropdown-item">Edit Profile</a>
+        <a class="dropdown-item" routerLink="/member/edit">Edit Profile</a>
         <a class="dropdown-item" (click)="logout()">Logout</a>
       </div>
     </div>
