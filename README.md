@@ -1,27 +1,33 @@
-# Client
+## Start the app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+To start the development server run `nx serve MSN-UI`. Open your browser and navigate to http://localhost:4200/. Happy coding!
 
-## Development server
+# Dating App
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Dating App is (as stated) a dating application in which you can as a user see other people's profiles, pictures, description, age [...]. You can also chat with the users via a SignalR powered.
+You can also filter your search based on : age, gender, new users [...].
 
-## Code scaffolding
+SqLite is mandatory in order to host the seed data users. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This is a Frontend application, meaning that it works in pair with the DatingApp-API backend API which you can find in my repositories.
 
-## Build
+## Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+You can see that there are seed users already to help you use the app without having to register with your actual email address.
+If you identify as a man, login with these credentials (prepared for showing purposes) : 
 
-## Running unit tests
+```json
+username:juarez
+password:Pa$$w0rd
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+If you identify as a woman, login with these credentials (prepared for showing purposes) : 
 
-## Running end-to-end tests
+```json
+username:anne
+password:Pa$$w0rd
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Rules
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+There are no specific rules except to enjoy :) 
