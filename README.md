@@ -12,6 +12,15 @@ SqLite is mandatory in order to host the seed data users.
 This is a Frontend application, meaning that it works in pair with the DatingApp-API backend API which you can find in my repositories.
 
 ## Usage
+First, you will need to open a terminal in which you enter this command : 
+```
+npm install --legacy-peer-deps
+```
+
+And then run the application by entering : 
+```
+npm start
+```
 
 You can see that there are seed users already to help you use the app without having to register with your actual email address.
 If you identify as a man, login with these credentials (prepared for showing purposes) : 
