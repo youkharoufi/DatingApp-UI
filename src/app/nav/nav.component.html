@@ -2,7 +2,7 @@
   <div class="container">
     <a class="navbar-brand" routerLink="/">Dating App</a>
 
-    
+
     <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="currentUser$ | async">
       <ng-container *ngIf="currentUser$ | async">
         <li class="nav-item">
@@ -26,7 +26,7 @@
     </ul>
 
     <div *ngIf="(currentUser$ | async) as user" class="dropdown" dropdown>
-      <img src="{{user.photoUrl || './assets/user.png'}}" alt="user photo" />
+      <img src="{{user.photoUrl ? user.photoUrl : './assets/denji.png'}}" alt="user photo" />
       <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle>Welcome {{user.knownAs | titlecase}}</a>
       <div class="dropdown-menu mt-3" *dropdownMenu>
         <a class="dropdown-item" routerLink="/member/edit">Edit Profile</a>
@@ -40,6 +40,6 @@
       <button class="btn btn-outline-success" type="submit">Login</button>
     </form>
 
-    
+
   </div>
 </nav>
